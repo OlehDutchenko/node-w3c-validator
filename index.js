@@ -16,7 +16,7 @@ const validate = require('./lib/validate');
 // Private
 // ----------------------------------------
 
-const testFilePath = path.join(process.cwd(), './tmp/index.html');
+const testFilePath = path.join(process.cwd(), './tmp/');
 
 // ----------------------------------------
 // Public

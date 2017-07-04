@@ -4,24 +4,60 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title><%- title %></title>
+	<title>Validation result</title>
 </head>
 <body>
-	<div id="results">
-		<ol>
-			<% messages.forEach(function(item) { %>
-			<li class="<%- item.classes %>">
-				<p>
-					<strong><%- item.badge %></strong>
-					<span><%= item.message %></span>
+	<header>
+		<h1>Validation result</h1>
+	</header>
+	<% if (Object.keys(views).length > 1) { %>
+		<nav id="navs" class="navs">
+			<h2 class="navs__title">Table of contents</h2>
+			<ul class="navs__list">
+			<% for (var key in views) { %>
+				<% var data = views[key]; %>
+				<li><a href="#<%- data.anchor %>"><%- data.name %></a></li>
+			<% } %>
+			</ul>
+		</nav>
+	<% } %>
+	<main class="results">
+		<% for (var key in views) { %>
+			<% var data = views[key]; %>
+			<div id="<%- data.anchor %>" class="view">
+				<h3 class="view__title">
+					<% if (Object.keys(views).length > 1) { %>
+						<a href="#<%- data.anchor %>">#</a>
+						<span><%- data.name %></span>
+						<a href="#navs">&uArr;</a>
+					<% } else { %>
+						<span><%- data.name %></span>
+					<% } %>
+				</h3>
+				<p class="view__path">
+					<span><%- data.path %></span>
 				</p>
-				<p class="location">
-					From line <span class="first-line">93</span>, column <span class="first-col">9</span>; to line <span class="last-line">93</span>, column <span class="last-col">14</span>
-				</p>
-				<pre><%= item.extract %></pre>
-			</li>
-			<% }); %>
-		</ol>
-	</div>
+				<div class="view__list">
+					<ol class="messages">
+						<% data.list.forEach(function(item) { %>
+							<li class="message message--<%- item.classes.join(' message--') %>">
+								<p class="message__head">
+									<strong class="message__type message__type--<%- item.badge %>"><%- item.badge %></strong>
+									<span class="message__description"><%= item.message %></span>
+								</p>
+								<p class="message__location">
+									From line <span class="first-line">93</span>, column <span class="first-col">9</span>; to line <span class="last-line">93</span>, column <span class="last-col">14</span>
+								</p>
+								<pre class="message__extract"><%= item.extract %></pre>
+							</li>
+						<% }); %>
+					</ol>
+				</div>
+			</div>
+		<% } %>
+	</main>
+	<footer>
+		<p>Date of the audit - <em><%- new Date() %></em></p>
+	</footer>
 </body>
 </html>
