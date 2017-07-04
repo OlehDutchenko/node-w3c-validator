@@ -28,15 +28,18 @@ const testFilePath = path.join(process.cwd(), './tmp/index.html');
 // ----------------------------------------
 
 vnu.validate(testFilePath, {
-	format: 'text'
+	format: 'json'
 }, function (err, stdout, stderr) {
 	if (err === null) {
 		return console.log('ok');
 	}
 
-	console.log('error');
-	console.log(stdout);
+	console.log(JSON.stringify(JSON.parse(stderr), null, '  '));
 	console.log(stderr);
+
+	// let output = VNU.transformOutput(stderr, 'text', 'html');
+
+	// console.log(output);
 });
 
 // ----------------------------------------

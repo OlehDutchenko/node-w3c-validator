@@ -4,6 +4,7 @@
   "description": "Node.js W3C Validator",
   "main": "index.js",
   "scripts": {
+    "start": "node ./index.js",
     "test": "happiness --verbose | snazzy",
     "happiness-fix": "happiness --fix | snazzy"
   },
