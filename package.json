@@ -1,0 +1,27 @@
+{
+  "name": "node-w3c-validator",
+  "version": "0.0.1",
+  "description": "Node.js W3C Validator",
+  "main": "index.js",
+  "scripts": {
+    "test": "happiness \"./*.js\" --verbose | snazzy",
+    "happiness-fix": "happiness \"./*.js\" --fix | snazzy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutchenkoOleg/node-w3c-validator.git"
+  },
+  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dutchenkoOleg/node-w3c-validator/issues"
+  },
+  "homepage": "https://github.com/dutchenkoOleg/node-w3c-validator#readme",
+  "dependencies": {
+    "vnu-jar": "^17.7.0"
+  },
+  "devDependencies": {
+    "happiness": "^7.1.2",
+    "snazzy": "^7.0.0"
+  }
+}
