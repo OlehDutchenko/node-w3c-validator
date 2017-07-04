@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title><%- title %></title>
+</head>
+<body>
+	<div id="results">
+		<ol>
+			<% messages.forEach(function(item) { %>
+			<li class="<%- item.classes %>">
+				<p>
+					<strong><%- item.badge %></strong>
+					<span><%= item.message %></span>
+				</p>
+				<p class="location">
+					From line <span class="first-line">93</span>, column <span class="first-col">9</span>; to line <span class="last-line">93</span>, column <span class="last-col">14</span>
+				</p>
+				<pre><%= item.extract %></pre>
+			</li>
+			<% }); %>
+		</ol>
+	</div>
+</body>
+</html>
