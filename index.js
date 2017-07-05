@@ -16,7 +16,7 @@ const validate = require('./lib/validate');
 // Private
 // ----------------------------------------
 
-const testFilePath = path.join(__dirname, './tmp/contacts.html');
+const testFilePath = path.join(__dirname, './tmp/');
 const destFolder = path.join(__dirname, './results/result.html');
 
 console.log(testFilePath);
