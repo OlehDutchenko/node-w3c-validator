@@ -16,7 +16,10 @@ const validate = require('./lib/validate');
 // Private
 // ----------------------------------------
 
-const testFilePath = path.join(process.cwd(), './tmp/');
+const testFilePath = path.join(__dirname, './tmp/contacts.html');
+const destFolder = path.join(__dirname, './results/result.html');
+
+console.log(testFilePath);
 
 // ----------------------------------------
 // Public
@@ -31,8 +34,7 @@ validate(testFilePath, {
 	if (err === null) {
 		return console.log('ok');
 	}
-
-	console.log(output);
+	validate.writeFile(destFolder, output);
 });
 
 // ----------------------------------------

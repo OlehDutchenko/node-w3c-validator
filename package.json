@@ -20,6 +20,7 @@
   "homepage": "https://github.com/dutchenkoOleg/node-w3c-validator#readme",
   "dependencies": {
     "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
     "vnu-jar": "^17.7.0"
   },
   "devDependencies": {
