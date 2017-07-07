@@ -17,7 +17,7 @@ const validate = require('./lib/validate');
 // ----------------------------------------
 
 const testFilePath = path.join(__dirname, './tmp/');
-const destFolder = path.join(__dirname, './results/result.html');
+const destFolder = path.join(__dirname, './results/vnu.html');
 
 console.log(testFilePath);
 

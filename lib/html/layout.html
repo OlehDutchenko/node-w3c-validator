@@ -39,7 +39,18 @@
 						<td>
 							<ul class="navs__list">
 								<% for (var key in counts.msgGroups) { %>
-								<li><%- key %> - (<%- counts.msgGroups[key] %>)</li>
+								<% var msgGroup = counts.msgGroups[key]; %>
+								<li>
+									<%= key.replace(/^(.+:)/, (str, grp) => `<strong>${grp}</strong>`) %> - (<%- msgGroup.count %>)
+									<% if (Object.keys(msgGroup.urls).length) { %>
+									<ul>
+										<% for (var url in msgGroup.urls) { %>
+											<li><small><%- url %></small></li>
+										<% } %>
+									</ul>
+									<br>
+									<% } %>
+								</li>
 								<% } %>
 							</ul>
 						</td>
@@ -86,7 +97,7 @@
 							<td>
 								<ul>
 									<% for (var k in data.errorGroups) { %>
-									<li style="margin-bottom: 3px;"><%- k %> - (<%- data.errorGroups[k].count %>)</li>
+									<li style="margin-bottom: 3px;"><%= k.replace(/^(.+:)/, (str, grp) => `<strong>${grp}</strong>`) %> - (<%- data.errorGroups[k].count %>)</li>
 									<% } %>
 								</ul>
 								<small>filter:</small>
