@@ -8,6 +8,9 @@
     "test": "happiness --verbose | snazzy",
     "happiness-fix": "happiness --fix | snazzy"
   },
+  "bin": {
+    "node-w3c-validator": "./bin/cmd.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dutchenkoOleg/node-w3c-validator.git"

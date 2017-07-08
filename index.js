@@ -10,7 +10,7 @@
 // ----------------------------------------
 
 const path = require('path');
-const validate = require('./lib/validate');
+const nodeW3CValidator = require('./lib/validator');
 
 // ----------------------------------------
 // Private
@@ -25,7 +25,7 @@ console.log(testFilePath);
 // Public
 // ----------------------------------------
 
-validate(testFilePath, {
+nodeW3CValidator(testFilePath, {
 	format: 'text',
 	skipNonHtml: true,
 	verbose: true,
@@ -34,7 +34,7 @@ validate(testFilePath, {
 	if (err === null) {
 		return console.log('ok');
 	}
-	validate.writeFile(destFolder, output);
+	nodeW3CValidator.writeFile(destFolder, output);
 });
 
 // ----------------------------------------
