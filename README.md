@@ -19,6 +19,12 @@ Install as global package
 npm i -g node-w3c-validator
 ```
 
+Usage
+
+```shell
+node-w3c-validator -i ./dist/ -f html -o ./reports/result.html
+```
+
 ### Options
 
 #### `-i, --input <path>`
@@ -151,7 +157,7 @@ const path = require('path');
 const nodeW3CValidator = require('node-w3c-validator');
 
 // paths
-const validatePath = './test/'; // or directly on file - './tmp/index.html'
+const validatePath = './dist/'; // or directly to the file - './dist/index.html'
 const resultOutput = './reports/result.html';
 
 // validate
@@ -172,7 +178,7 @@ nodeW3CValidator(validatePath, {
 ## Tests
 
 1. `npm test` for testing js and scss code style
-1. `npm run happiness-fix` for automatically fix most of problems with **js code style** 
+1. `npm run fix` for automatically fix most of problems with **js code style** 
 
 ## Changelog
 

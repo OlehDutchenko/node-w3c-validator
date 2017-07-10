@@ -7,4 +7,6 @@
 
 ---
 
-_No notable changes yet_
+## [1.0.0] - 2017.07.10
+
+- Stable release
