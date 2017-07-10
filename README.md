@@ -176,7 +176,7 @@ nodeW3CValidator(validatePath, {
 
 ## Tests
 
-1. `npm test` for testing js and scss code style
+1. `npm test` for testing js code style
 1. `npm run fix` for automatically fix most of problems with **js code style** 
 
 ## Changelog

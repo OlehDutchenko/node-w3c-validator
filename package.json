@@ -1,10 +1,10 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node ./tests/demo.js",
     "test": "happiness --verbose | snazzy",
     "fix": "happiness --fix | snazzy"
   },
