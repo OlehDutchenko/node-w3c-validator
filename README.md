@@ -5,7 +5,6 @@
 [![Build Status](https://travis-ci.org/dutchenkoOleg/node-w3c-validator.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/node-w3c-validator)
 
 > _Wrapper for [The Nu Html Checker (v.Nu)](https://www.npmjs.com/package/vnu-jar)_  
-> _**Status - Work In Progress**_
 
 [![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
 
