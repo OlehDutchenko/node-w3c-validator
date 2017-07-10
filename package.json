@@ -1,7 +1,7 @@
 {
   "name": "node-w3c-validator",
   "version": "1.0.0",
-  "description": "Node.js W3C Validator",
+  "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
     "start": "node ./index.js",
@@ -21,6 +21,16 @@
     "url": "https://github.com/dutchenkoOleg/node-w3c-validator/issues"
   },
   "homepage": "https://github.com/dutchenkoOleg/node-w3c-validator#readme",
+  "keywords": [
+    "html",
+    "html5",
+    "vnu",
+    "w3c-validator",
+    "nodejs",
+    "cli",
+    "reporting",
+    "checker"
+  ],
   "dependencies": {
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
