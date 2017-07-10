@@ -21,7 +21,7 @@ npm i -g node-w3c-validator
 Usage
 
 ```shell
-node-w3c-validator -i ./dist/ -f html -o ./reports/result.html
+node-w3c-validator -i ./dist/ -f html -o ./reports/result.html -s
 ```
 
 ### Options

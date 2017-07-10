@@ -7,6 +7,12 @@
 
 ---
 
+## [1.0.5] - 2017.07.10
+
+- add more `README.md` description
+
+---
+
 ## [1.0.1] - 2017.07.10
 
 - Stable release

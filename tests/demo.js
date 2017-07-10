@@ -24,7 +24,7 @@ const destFolder = path.join(__dirname, '../results/vnu.html');
 // ----------------------------------------
 
 nodeW3CValidator(testFilePath, {
-	format: 'text',
+	format: 'html',
 	skipNonHtml: true,
 	verbose: true,
 	outputAsHtml: true
