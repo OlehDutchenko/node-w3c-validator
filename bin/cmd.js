@@ -4,6 +4,7 @@
 // Imports
 // ----------------------------------------
 
+const path = require('path');
 const program = require('commander');
 const pkg = require('../package.json');
 const nodeW3CValidator = require('../lib/validator');
@@ -12,6 +13,7 @@ const nodeW3CValidator = require('../lib/validator');
 // Private
 // ----------------------------------------
 
+// setup
 program
 	.version(pkg.version)
 	.usage('[options] <pattern>')
@@ -29,7 +31,13 @@ program
 	.option('-v, --verbose', 'Specifies "verbose" output (currently this just means that the names of files being checked are written to stdout)')
 	.parse(process.argv);
 
-const props = [
+/**
+ * Properties list for auto detecting
+ * @const {Array.<string>}
+ * @private
+ * @sourceCode
+ */
+const cliProps = [
 	'asciiquotes',
 	'errorsOnly',
 	'exitZeroAlways',
@@ -40,56 +48,69 @@ const props = [
 	'verbose'
 ];
 
+/**
+ * Detect user's specified properties
+ * @returns {Object}
+ * @private
+ * @sourceCode
+ */
 function detectUserOptions () {
-	let userOptions = {};
+	let outputPath = program.output;
+	let userOptions = {
+		output: false
+	};
 
-	props.forEach(prop => {
+	cliProps.forEach(prop => {
 		let value = program[prop];
 
+		if (prop === 'stream' && value) {
+			return;
+		}
 		if (value !== undefined) {
 			userOptions[prop] = value;
 		}
 	});
-
-	let outputPath = program.output;
-
-	if (typeof outputPath === 'string') {
-		userOptions.ouput = outputPath;
+	if (typeof outputPath === 'string' && outputPath.length) {
+		userOptions.output = outputPath;
 	}
-
 	return userOptions;
 }
 
+/**
+ * Detect  input path where testing files lies
+ * @returns {*}
+ */
 function detectUserInput () {
 	let validatePath = program.input;
 
 	if (typeof validatePath !== 'string') {
 		validatePath = process.cwd();
+	} else {
+		if (!(/^(http(s)?:)?\/\//i.test(validatePath))) {
+			validatePath = path.resolve(validatePath).replace(/\\/g, '/');
+		}
 	}
-
 	return validatePath;
 }
-
-function detectUserOutput (userOptions) {
-	let outputPath = program.ouput;
-
-	if (typeof outputPath === 'string') {
-		userOptions.ouput = outputPath;
-	}
-}
-
-// ----------------------------------------
-// Public
-// ----------------------------------------
 
 const userOptions = detectUserOptions();
 const validatePath = detectUserInput();
 
-console.log(userOptions);
-console.log(validatePath);
-
 // ----------------------------------------
-// Exports
+// Initialize
 // ----------------------------------------
 
-// console.log(program);
+nodeW3CValidator(validatePath, userOptions, function (err, output) {
+	if (err === null) {
+		return;
+	}
+	if (userOptions.output) {
+		console.log('Resulting report will be written in path:');
+		console.log(userOptions.output);
+		nodeW3CValidator.writeFile(userOptions.output, output);
+	} else {
+		console.log('Resulting report:');
+		console.log(output);
+	}
+	console.log(' ');
+});

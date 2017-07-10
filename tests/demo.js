@@ -10,16 +10,14 @@
 // ----------------------------------------
 
 const path = require('path');
-const nodeW3CValidator = require('./lib/validator');
+const nodeW3CValidator = require('../lib/validator');
 
 // ----------------------------------------
 // Private
 // ----------------------------------------
 
-const testFilePath = path.join(__dirname, './tmp/');
-const destFolder = path.join(__dirname, './results/vnu.html');
-
-console.log(testFilePath);
+const testFilePath = path.join(__dirname, '../tmp/');
+const destFolder = path.join(__dirname, '../results/vnu.html');
 
 // ----------------------------------------
 // Public
