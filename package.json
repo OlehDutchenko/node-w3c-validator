@@ -1,8 +1,8 @@
 {
   "name": "node-w3c-validator",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Node.js W3C Validator",
-  "main": "index.js",
+  "main": "./lib/validator.js",
   "scripts": {
     "start": "node ./index.js",
     "test": "happiness --verbose | snazzy",

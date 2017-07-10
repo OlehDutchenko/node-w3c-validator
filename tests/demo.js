@@ -1,7 +1,7 @@
 'use strict';
 
 /**
- * Description
+ * Demonstration of usage, as node.js module
  * @module
  */
 
