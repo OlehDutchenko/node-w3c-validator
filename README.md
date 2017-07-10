@@ -153,7 +153,6 @@ Name | Data type | Argument | Description
 
 ```js
 // imports
-const path = require('path');
 const nodeW3CValidator = require('node-w3c-validator');
 
 // paths
