@@ -21,7 +21,7 @@ npm i -g node-w3c-validator
 Usage
 
 ```shell
-node-w3c-validator -i ./dist/ -f html -o ./reports/result.html -s
+node-w3c-validator -i ./dist/*.html -f html -o ./reports/result.html -s
 ```
 
 ### Options
@@ -51,6 +51,18 @@ Specifies the output format for reporting the results
 
 default: `unset`  
 possible values: `gnu | xml | json | text | html`
+
+#### `--filterfile <filename>`
+
+Specifies a filename. Each line of the file contains either a regular expression or starts with "#" to indicate the line is a comment. Any error message or warning message that matches a regular expression in the file is filtered out (dropped/suppressed)
+
+default: `unset`, _checker does no message filtering_
+
+#### `--filterpattern <pattern>`
+
+Specifies a regular-expression pattern. Any error message or warning message that matches the pattern is filtered out (dropped/suppressed)
+
+default: `unset`, _checker does no message filtering_
 
 #### `-s, --skip-non-html`
 
@@ -155,19 +167,19 @@ Name | Data type | Argument | Description
 const nodeW3CValidator = require('node-w3c-validator');
 
 // paths
-const validatePath = './dist/'; // or directly to the file - './dist/index.html'
+const validatePath = './dist/*.html'; // or directly to the file - './dist/index.html'
 const resultOutput = './reports/result.html';
 
 // validate
 nodeW3CValidator(validatePath, {
-	format: 'html',
-	skipNonHtml: true,
-	verbose: true
+    format: 'html',
+    skipNonHtml: true,
+    verbose: true
 }, function (err, output) {
-	if (err === null) {
-		return;
-	}
-	nodeW3CValidator.writeFile(resultOutput, output);
+    if (err === null) {
+        return;
+    }
+    nodeW3CValidator.writeFile(resultOutput, output);
 });
 ```
 

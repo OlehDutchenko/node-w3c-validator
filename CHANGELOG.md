@@ -7,6 +7,18 @@
 
 ---
 
+## [1.1.0] - 2017.07.11
+
+#### Added
+
+- CLI / Node.js options:
+	- [--filterfile <filename>](./README.md#--filterfile-filename)
+	- [--filterpattern <pattern>](./README.md#--filterpattern-pattern)
+
+#### Changed
+
+- Readme description
+
 ## [1.0.5] - 2017.07.10
 
 - add more `README.md` description
