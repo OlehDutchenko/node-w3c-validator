@@ -45,7 +45,11 @@
 									<% if (Object.keys(msgGroup.urls).length) { %>
 									<ul>
 										<% for (var url in msgGroup.urls) { %>
-											<li><small><%- url %></small></li>
+											<%
+												let viewName = url.replace(/\\/, '/').split('/').pop();
+												let viewAnchor = viewName.replace(/\/|\.|[а-я]|\s/gi, '-');
+											%>
+											<li><small><a href="#<%- viewAnchor %>"><%- url %></a></small></li>
 										<% } %>
 									</ul>
 									<br>
