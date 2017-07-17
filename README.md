@@ -10,6 +10,14 @@
 
 ---
 
+## Attention
+
+> You need install Java for working with `node-w3c-validator`  
+> Visit https://java.com for download Java if you not have it
+
+
+---
+
 ## CLI
 
 Install as global package

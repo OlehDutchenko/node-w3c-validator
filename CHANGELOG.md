@@ -7,11 +7,21 @@
 
 ---
 
+## [1.1.3] - 2017.07.17
+
+#### Edited
+
+- README.md - Java install requirements
+
+--- 
+
 ## [1.1.2] - 2017.07.11
 
 #### Edited
 
 - HTML layout
+
+---
 
 ## [1.1.0] - 2017.07.11
 
@@ -24,6 +34,8 @@
 #### Changed
 
 - Readme description
+
+---
 
 ## [1.0.5] - 2017.07.10
 
