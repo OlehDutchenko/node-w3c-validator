@@ -103,7 +103,7 @@ const validatePath = detectUserInput();
 
 nodeW3CValidator(validatePath, userOptions, function (err, output) {
 	if (err === null) {
-		return;
+		process.exit(0);
 	}
 	if (userOptions.output) {
 		console.log('Resulting report will be written in path:');
@@ -114,4 +114,5 @@ nodeW3CValidator(validatePath, userOptions, function (err, output) {
 		console.log(output);
 	}
 	console.log(' ');
+	process.exit(1);
 });
