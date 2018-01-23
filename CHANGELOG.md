@@ -7,6 +7,14 @@
 
 ---
 
+## [1.1.4] - 2018.01.23
+
+#### Enhancement
+
+- [Exit with an exit code other than 0 if validation fails](https://github.com/dutchenkoOleg/node-w3c-validator/pull/2)
+
+---
+
 ## [1.1.3] - 2017.07.17
 
 #### Edited
