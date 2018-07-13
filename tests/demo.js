@@ -17,7 +17,7 @@ const nodeW3CValidator = require('../lib/validator');
 // ----------------------------------------
 
 const testFilePath = path.join(__dirname, '../tmp/*.html');
-const destFolder = path.join(__dirname, '../results/vnu.html');
+const resultFolder = path.join(__dirname, '../results/vnu.html');
 
 // ----------------------------------------
 // Public
@@ -31,8 +31,8 @@ nodeW3CValidator(testFilePath, {
 		return console.log('ok');
 	}
 	console.log('Resulting report will be written in path:');
-	console.log(destFolder);
-	nodeW3CValidator.writeFile(destFolder, output);
+	console.log(resultFolder);
+	nodeW3CValidator.writeFile(resultFolder, output);
 });
 
 // ----------------------------------------
