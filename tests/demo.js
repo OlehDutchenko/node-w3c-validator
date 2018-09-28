@@ -16,7 +16,7 @@ const nodeW3CValidator = require('../lib/validator');
 // Private
 // ----------------------------------------
 
-const testFilePath = path.join(__dirname, '../tmp/*.html');
+const testFilePath = path.join(__dirname, '/**/*.html');
 const resultFolder = path.join(__dirname, '../results/vnu.html');
 
 // ----------------------------------------

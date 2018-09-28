@@ -4,7 +4,7 @@
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dutchenkoOleg/node-w3c-validator/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/node-w3c-validator.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/node-w3c-validator)
 
-> _Wrapper for [The Nu Html Checker (v.Nu)](https://www.npmjs.com/package/vnu-jar)_  
+> _Wrapper for [The Nu Html Checker (v.Nu)](https://www.npmjs.com/package/vnu-jar)_
 
 [![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
 
@@ -12,7 +12,7 @@
 
 ## Attention
 
-> You need install Java for working with `node-w3c-validator`  
+> You need install Java for working with `node-w3c-validator`
 > Visit https://java.com for download Java if you not have it
 
 
@@ -32,20 +32,26 @@ Usage
 node-w3c-validator -i ./dist/*.html -f html -o ./reports/result.html -s
 ```
 
+You may pass a [glob](https://www.npmjs.com/package/glob) pattern too
+
+```shell
+node-w3c-validator -i ./dist/**/*.html -f html -o ./reports/result.html -s
+```
+
 ### Options
 
 #### `-i, --input <path>`
 
 Validate input path.
 
-default: `process.cwd()` 
+default: `process.cwd()`
 
 #### `-a, --asciiquotes`
 
 Specifies whether ASCII quotation marks are substituted for Unicode smart
 quotation marks in messages.
 
-default: `unset` 
+default: `unset`
 
 #### `-e, --errors-only`
 
@@ -57,7 +63,7 @@ default: `unset`, _all message reported, including warnings & info messages_
 
 Specifies the output format for reporting the results
 
-default: `unset`  
+default: `unset`
 possible values: `gnu | xml | json | text | html`
 
 #### `--filterfile <filename>`
@@ -130,20 +136,20 @@ Name | Data type | Description
  `pathTo` | `string` | The path to the folder or directly to the file, for verification, also it can be url to the Web document
  `options` | `Object` | Options for validating, sеe description below
  `done` | `Function` | Validation callback, sеe description below
- 
- 
+
+
 #### `options`
- 
-You can use all available options from [CLI / Options](#cli). Only change props name to the camelCase style,   
- exeception `--no-stream` and `--no-langdetect` they must be declared without `no` part 
- 
+
+You can use all available options from [CLI / Options](#cli). Only change props name to the camelCase style,
+ exeception `--no-stream` and `--no-langdetect` they must be declared without `no` part
+
 _example_
- 
+
 - `--errors-only` - `errorsOnly: true`
 - `--no-langdetect` - `langdetect: false`
 - `--format json` - `format: 'json'`
 
- 
+
 #### `done(err, output)`
 
 Validation callback.
@@ -175,7 +181,9 @@ Name | Data type | Argument | Description
 const nodeW3CValidator = require('node-w3c-validator');
 
 // paths
-const validatePath = './dist/*.html'; // or directly to the file - './dist/index.html'
+const validatePath = './dist/*.html';
+// or directly to the file - './dist/index.html'
+// or a glob pattern - './dist/**/*.html'
 const resultOutput = './reports/result.html';
 
 // validate
@@ -196,7 +204,7 @@ nodeW3CValidator(validatePath, {
 ## Tests
 
 1. `npm test` for testing js code style
-1. `npm run fix` for automatically fix most of problems with **js code style** 
+1. `npm run fix` for automatically fix most of problems with **js code style**
 
 ## Changelog
 
