@@ -4,9 +4,10 @@
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
-    "start": "node ./tests/demo.js",
     "test": "happiness --verbose | snazzy",
-    "fix": "happiness --fix | snazzy"
+    "cli-api": "node-w3c-validator -i /tests/**/*.html -f html -o /results/cli-api-report.html",
+    "nodejs-api": "node ./tests/demo.js",
+    "code-style": "happiness --verbose --fix | snazzy"
   },
   "bin": {
     "node-w3c-validator": "./bin/cmd.js"
@@ -32,6 +33,7 @@
     "checker"
   ],
   "dependencies": {
+    "chalk": "^2.4.1",
     "commander": "^2.18.0",
     "fileset": "^2.0.3",
     "lodash": "^4.17.11",

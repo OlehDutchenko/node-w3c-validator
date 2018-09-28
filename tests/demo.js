@@ -17,7 +17,7 @@ const nodeW3CValidator = require('../lib/validator');
 // ----------------------------------------
 
 const testFilePath = path.join(__dirname, '/**/*.html');
-const resultFolder = path.join(__dirname, '../results/vnu.html');
+const resultFolder = path.join(__dirname, '../results/nodejs-api-report.html.html');
 
 // ----------------------------------------
 // Public
