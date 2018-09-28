@@ -216,7 +216,7 @@ Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/node-w3c-validato
 #### Contributors 💪
 
 - Michael Kühnel [@mischah](https://github.com/mischah)
-- Debjeet Biswas [@mischah](https://github.com/detj)
+- Debjeet Biswas [@detj](https://github.com/detj)
 
 ## Code of Conduct
 
