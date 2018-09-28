@@ -90,9 +90,7 @@ function detectUserInput () {
 	} else {
 		if (!(/^(http(s)?:)?\/\//i.test(validatePath))) {
 			if (/^\//.test(validatePath)) {
-				validatePath = path.join(process.cwd(), validatePath);
-			} else {
-				validatePath = path.resolve(validatePath).replace(/\\/g, '/');
+				validatePath = path.resolve(validatePath)
 			}
 		}
 	}
@@ -107,18 +105,13 @@ const validatePath = detectUserInput();
 // ----------------------------------------
 
 nodeW3CValidator(validatePath, userOptions, function (err, output) {
-	console.log(err);
 	if (err === null) {
 		process.exit(0);
 	}
 	console.log(chalk.red('FOUND ERRORS'));
 	let outputPath = userOptions.output;
 	if (outputPath) {
-		if (/^\//.test(outputPath)) {
-			outputPath = path.join(process.cwd(), outputPath);
-		} else {
-			outputPath = path.resolve(outputPath).replace(/\\/g, '/');
-		}
+		outputPath = path.resolve(outputPath);
 		let message = [
 			chalk.red('Resulting report will be written in path:'),
 			chalk.blue(outputPath.split(path.sep).join('/'))

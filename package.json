@@ -1,11 +1,11 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
     "test": "happiness --verbose | snazzy",
-    "cli-api": "node-w3c-validator -i /tests/**/*.html -f html -o /results/cli-api-report.html",
+    "cli-api": "node-w3c-validator -i ./tests/**/*.html -f html -o /results/cli-api-report.html",
     "nodejs-api": "node ./tests/demo.js",
     "code-style": "happiness --verbose --fix | snazzy"
   },
