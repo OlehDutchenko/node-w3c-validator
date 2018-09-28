@@ -7,6 +7,12 @@
 
 ---
 
+## [1.2.1] - 2018.09.28
+
+- [[02eb617](https://github.com/dutchenkoOleg/node-w3c-validator/commit/02eb617626bca3ca6bce14bd1824d7a26a2a3bac)] - remove correction of absolute path
+
+---
+
 ## [1.2.0] - 2018.09.28
 
 

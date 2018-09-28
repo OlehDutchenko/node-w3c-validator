@@ -90,7 +90,7 @@ function detectUserInput () {
 	} else {
 		if (!(/^(http(s)?:)?\/\//i.test(validatePath))) {
 			if (/^\//.test(validatePath)) {
-				validatePath = path.resolve(validatePath)
+				validatePath = path.resolve(validatePath);
 			}
 		}
 	}
