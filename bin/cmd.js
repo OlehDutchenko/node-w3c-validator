@@ -5,6 +5,7 @@
 // ----------------------------------------
 
 const path = require('path');
+const chalk = require('chalk');
 const program = require('commander');
 const pkg = require('../package.json');
 const nodeW3CValidator = require('../lib/validator');
@@ -20,7 +21,7 @@ program
 	.option('-i, --input [path]', 'Validate input path')
 	.option('-a, --asciiquotes', 'Specifies whether ASCII quotation marks are substituted for Unicode smart quotation marks in messages.')
 	.option('-e, --errors-only', 'Specifies that only error-level messages and non-document-error messages are reported (so that warnings and info messages are not reported)')
-	// .option('-q, --exit-zero-always', 'Makes the checker exit zero even if errors are reported for any documents')
+	.option('-q, --exit-zero-always', 'Makes the checker exit zero even if errors are reported for any documents')
 	.option('--filterfile [filename]', 'Specifies a filename. Each line of the file contains either a regular expression or starts with "#" to indicate the line is a comment. Any error message or warning message that matches a regular expression in the file is filtered out (dropped/suppressed)')
 	.option('--filterpattern [pattern]', 'Specifies a regular-expression pattern. Any error message or warning message that matches the pattern is filtered out (dropped/suppressed)')
 	.option('-f, --format [gnu|xml|json|text|html]', 'Specifies the output format for reporting the results')
@@ -88,7 +89,11 @@ function detectUserInput () {
 		validatePath = process.cwd();
 	} else {
 		if (!(/^(http(s)?:)?\/\//i.test(validatePath))) {
-			validatePath = path.resolve(validatePath).replace(/\\/g, '/');
+			if (/^\//.test(validatePath)) {
+				validatePath = path.join(process.cwd(), validatePath);
+			} else {
+				validatePath = path.resolve(validatePath).replace(/\\/g, '/');
+			}
 		}
 	}
 	return validatePath;
@@ -102,15 +107,26 @@ const validatePath = detectUserInput();
 // ----------------------------------------
 
 nodeW3CValidator(validatePath, userOptions, function (err, output) {
+	console.log(err);
 	if (err === null) {
 		process.exit(0);
 	}
-	if (userOptions.output) {
-		console.log('Resulting report will be written in path:');
-		console.log(userOptions.output);
-		nodeW3CValidator.writeFile(userOptions.output, output);
+	console.log(chalk.red('FOUND ERRORS'));
+	let outputPath = userOptions.output;
+	if (outputPath) {
+		if (/^\//.test(outputPath)) {
+			outputPath = path.join(process.cwd(), outputPath);
+		} else {
+			outputPath = path.resolve(outputPath).replace(/\\/g, '/');
+		}
+		let message = [
+			chalk.red('Resulting report will be written in path:'),
+			chalk.blue(outputPath.split(path.sep).join('/'))
+		].join('\n');
+		console.log(message);
+		nodeW3CValidator.writeFile(outputPath, output);
 	} else {
-		console.log('Resulting report:');
+		console.log(chalk.red('Resulting report:'));
 		console.log(output);
 	}
 	console.log(' ');

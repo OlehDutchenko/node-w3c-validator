@@ -59,6 +59,10 @@ Specifies that only error-level messages and non-document-error messages are rep
 
 default: `unset`, _all message reported, including warnings & info messages_
 
+#### `-q, --exit-zero-always`
+
+Makes the checker exit zero even if errors are reported for any documents
+
 #### `-f, --format <format>`
 
 Specifies the output format for reporting the results
@@ -200,11 +204,6 @@ nodeW3CValidator(validatePath, {
 ```
 
 ---
-
-## Tests
-
-1. `npm test` for testing js code style
-1. `npm run fix` for automatically fix most of problems with **js code style**
 
 ## Changelog
 
