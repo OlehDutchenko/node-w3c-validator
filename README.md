@@ -213,6 +213,11 @@ Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/node-w3c-validator/b
 
 Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/node-w3c-validator/blob/master/CONTRIBUTING.md)
 
+#### Contributors 💪
+
+- Michael Kühnel [@mischah](https://github.com/mischah)
+- Debjeet Biswas [@mischah](https://github.com/detj)
+
 ## Code of Conduct
 
 Please read [CODE_OF_CONDUCT.md](https://github.com/dutchenkoOleg/node-w3c-validator/blob/master/CODE_OF_CONDUCT.md)
