@@ -175,10 +175,21 @@ You can use all available options from [CLI / Options](#cli). Only change props 
 
 _example_
 
-- `--buffersize 500` - `buffersize: 500`
 - `--errors-only` - `errorsOnly: true`
 - `--no-langdetect` - `langdetect: false`
 - `--format json` - `format: 'json'`
+
+_an exception_
+
+`--buffersize 500`
+
+transforms to
+
+```js
+exec: {
+    buffersize: 1024 * 500
+}
+```
 
 
 #### `done(err, output)`
