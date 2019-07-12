@@ -132,7 +132,7 @@ Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html
 node-w3c-validator -i static/**/*.html -b 500
 ```
 
-##### CLI `exec.bufferSize`
+##### Node.js API `exec.bufferSize`
 
 ```js
 // increase buffer size (1024 * 500)
