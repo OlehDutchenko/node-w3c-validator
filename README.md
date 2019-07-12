@@ -121,6 +121,10 @@ Shows the current version number.
 
 Write reporting result to the path
 
+#### `-b, --buffersize <path>`
+
+Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html#child_process_child_process_exec_command_options_callback) size to prevent #3, `!!! OUTPUT ERROR` or `Unexpected end of JSON input` errors. This is because [child_process stdout being truncated](https://github.com/nodejs/node/issues/19218) when validator check a lot of files.
+
 ---
 
 ## Node.js API

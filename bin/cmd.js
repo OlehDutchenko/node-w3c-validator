@@ -31,6 +31,7 @@ program
 	.option('--no-stream', 'Forces all documents to be be parsed in buffered mode instead of streaming mode (causes some parse errors to be treated as non-fatal document errors instead of as fatal document errors)')
 	.option('-v, --verbose', 'Specifies "verbose" output (currently this just means that the names of files being checked are written to stdout)')
 	.option('-o, --output [path]', 'Write reporting result to the path')
+	.option('-b, --buffersize <size>', '1024 * <size> Increase maxBuffer size for child_process.exec, if result output truncated')
 	.parse(process.argv);
 
 /**
@@ -47,7 +48,8 @@ const cliProps = [
 	'skipNonHtml',
 	'html',
 	'stream',
-	'verbose'
+	'verbose',
+	'buffersize'
 ];
 
 /**
@@ -59,7 +61,8 @@ const cliProps = [
 function detectUserOptions () {
 	let outputPath = program.output;
 	let userOptions = {
-		output: false
+		output: false,
+		exec: {}
 	};
 
 	cliProps.forEach(prop => {
@@ -70,6 +73,10 @@ function detectUserOptions () {
 		}
 		if (value !== undefined) {
 			userOptions[prop] = value;
+
+			if (prop === 'buffersize') {
+				userOptions.exec.maxBuffer = 1024 * value;
+			}
 		}
 	});
 	if (typeof outputPath === 'string' && outputPath.length) {
