@@ -1,6 +1,7 @@
 # node-w3c-validator
 
-![npm](https://img.shields.io/badge/node-6.3.1-yellow.svg)
+![node](https://img.shields.io/badge/node-6.3.1-yellow.svg)
+[![npm](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/node-w3c-validator)
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dutchenkoOleg/node-w3c-validator/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/node-w3c-validator.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/node-w3c-validator)
 
