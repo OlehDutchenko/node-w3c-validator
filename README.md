@@ -121,9 +121,30 @@ Shows the current version number.
 
 Write reporting result to the path
 
-#### `-b, --buffersize <path>`
+#### `-b, --buffersize <size>`
 
 Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html#child_process_child_process_exec_command_options_callback) size to prevent #3, `!!! OUTPUT ERROR` or `Unexpected end of JSON input` errors. This is because [child_process stdout being truncated](https://github.com/nodejs/node/issues/19218) when validator check a lot of files.
+
+##### CLI `-b, --buffersize`
+
+```bash
+# increase buffer size (1024 * 500)
+node-w3c-validator -i static/**/*.html -b 500
+```
+
+##### CLI `exec.bufferSize`
+
+```js
+// increase buffer size (1024 * 500)
+nodeW3CValidator(validatePath, {
+    format: 'html',
+    exec: {
+        bufferSize: 1024 * 500
+    }
+}, function (err, output) {
+    // ...
+});
+```
 
 ---
 
