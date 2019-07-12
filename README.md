@@ -132,14 +132,14 @@ Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html
 node-w3c-validator -i static/**/*.html -b 500
 ```
 
-##### Node.js API `exec.bufferSize`
+##### Node.js API `exec.buffersize`
 
 ```js
 // increase buffer size (1024 * 500)
 nodeW3CValidator(validatePath, {
     format: 'html',
     exec: {
-        bufferSize: 1024 * 500
+        buffersize: 1024 * 500
     }
 }, function (err, output) {
     // ...
@@ -174,6 +174,7 @@ You can use all available options from [CLI / Options](#cli). Only change props 
 
 _example_
 
+- `--buffersize 500` - `buffersize: 500`
 - `--errors-only` - `errorsOnly: true`
 - `--no-langdetect` - `langdetect: false`
 - `--format json` - `format: 'json'`
@@ -242,6 +243,7 @@ Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/node-w3c-validato
 
 - Michael Kühnel [@mischah](https://github.com/mischah)
 - Debjeet Biswas [@detj](https://github.com/detj)
+- Yunus Gaziev [@yunusga](https://github.com/yunusga)
 
 ## Code of Conduct
 
