@@ -1,10 +1,10 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
-    "test": "happiness --verbose | snazzy",
+    "test": "prettier --write \"lib/**/*.js\" && prettier --write \"bin/cmd.js\" && happiness --verbose --fix | snazzy",
     "cli-api": "node-w3c-validator -i ./tests/**/*.html -f html -o /results/cli-api-report.html",
     "nodejs-api": "node ./tests/demo.js",
     "code-style": "happiness --verbose --fix | snazzy"
@@ -32,6 +32,16 @@
     "reporting",
     "checker"
   ],
+  "prettier": {
+    "arrowParens": "always",
+    "bracketSpacing": true,
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "tabWidth": 4,
+    "useTabs": true
+  },
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
@@ -39,7 +49,7 @@
     "lodash": ">=4.17.15",
     "mkdirp": "^0.5.1",
     "ora": "^3.4.0",
-    "svg-spritemap-webpack-plugin": "^3.3.7",
+    "prettier": "^1.19.1",
     "vnu-jar": "^19.6.7"
   },
   "devDependencies": {
