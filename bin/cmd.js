@@ -107,7 +107,9 @@ function detectUserOptions () {
 	let outputPath = program.output;
 	let userOptions = {
 		output: false,
-		exec: {}
+		exec: {},
+        filterfile: program.filterfile,
+        filterpattern: program.filterpattern
 	};
 
 	cliProps.forEach((prop) => {

@@ -1,6 +1,6 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
