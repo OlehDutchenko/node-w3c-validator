@@ -7,6 +7,16 @@
 
 ---
 
+## [1.4.0] - 2019.11.16
+
+- [[697daed](https://github.com/dutchenkoOleg/node-w3c-validator/commit/697daed702d7685bf8ebc4a574ff2231c7f7a484)] - 1.4.0 - add lint format
+- [[4d0cef6](https://github.com/dutchenkoOleg/node-w3c-validator/commit/4d0cef6551b5c7384d65fc95d3f414f389866886)] - 1.3.5 - Add github action
+- [[0c9a65e](https://github.com/dutchenkoOleg/node-w3c-validator/commit/0c9a65ea37e366becfca19ceb1145b7e6e27bdd0)] - Merge pull request #11 
+- [[7bf7675](https://github.com/dutchenkoOleg/node-w3c-validator/commit/7bf7675798b19abc0aabacf757a48d91000b4258)] - Merge pull request #10
+- [[fb283ed](https://github.com/dutchenkoOleg/node-w3c-validator/commit/fb283ed00ed542b473634c23de24982a53797c5f)] - 1.3.0
+
+---
+
 ## [1.2.1] - 2018.09.28
 
 - [[02eb617](https://github.com/dutchenkoOleg/node-w3c-validator/commit/02eb617626bca3ca6bce14bd1824d7a26a2a3bac)] - remove correction of absolute path

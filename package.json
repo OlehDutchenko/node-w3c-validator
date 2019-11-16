@@ -6,7 +6,7 @@
   "scripts": {
     "test": "happiness --verbose | snazzy",
     "cli-html": "node ./bin/cmd.js -i ./tests/**/*.html -f html -o ./results/cli-api-report.html",
-    "cli-lint": "node ./bin/cmd.js -i ./tests/**/*.html -f lint -e",
+    "cli-lint": "node ./bin/cmd.js -i ./tests/**/*.html -f lint",
     "nodejs-api": "node ./tests/demo.js",
     "code-style": "happiness --verbose --fix | snazzy"
   },

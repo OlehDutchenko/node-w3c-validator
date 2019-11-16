@@ -72,7 +72,8 @@ default: `unset`
 possible values: `gnu | xml | json | text | html | lint`  
 
 > `lint` format is available from 1.4.0 version.  
-> `lint` format is designed for convenient error output to the terminal.
+> `lint` format is designed for convenient error output to the terminal.  
+> it uses a [eslint-formatter-pretty](https://github.com/sindresorhus/eslint-formatter-pretty#readme) under the hood
 
 
 ![lint format screenshot](./tests/assets/lint-format-screenshot.png)
