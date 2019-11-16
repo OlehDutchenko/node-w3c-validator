@@ -45,11 +45,13 @@ node-w3c-validator -i ./dist/**/*.html -f html -o ./reports/result.html -s
 
 Validate input path.
 
+default: `process.cwd()`
+
 #### `--exclude <path>`
 
 Exclude from input path.
 
-default: `process.cwd()`
+default: `unset`
 
 #### `-a, --asciiquotes`
 
