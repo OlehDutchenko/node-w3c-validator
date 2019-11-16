@@ -22,6 +22,10 @@ program
 		'-i, --input [path]',
 		'Validate input path'
 	)
+    .option(
+        '--exclude [path]',
+        'Exclude from input path'
+    )
 	.option(
 		'-a, --asciiquotes',
 		'Specifies whether ASCII quotation marks are substituted for Unicode smart quotation marks in messages.'
@@ -147,6 +151,9 @@ function detectUserInput () {
 
 const userOptions = detectUserOptions();
 const validatePath = detectUserInput();
+if (program.exclude) {
+	userOptions.exclude = program.exclude;
+}
 
 // ----------------------------------------
 // Initialize
