@@ -230,6 +230,38 @@ Name | Data type | Argument | Description
  `done` | `Function` | _optional_ | if exist - it will asynchronous writes output to the filePath. See [fs.writeFile(file, data, callback)](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
 
 
+### Errors and Warnings suppressing
+
+You can ignore some errors or warnings by suppressing them.  
+_**Note!** This feature can be used only on `html`, `json` and `lint` formats._
+
+You need to specify `nodeW3Cvalidator` field in your project `package.json` file.
+
+Here can be two arrays, for errors (`suppressErrors`) and warnigns(`suppressWarnings`).  
+Values must be a string parts or fully value of "unwanted" message.  
+Under the hood - node-w3c-validator will use `String.protorype.includes`  
+method for filtering messages.
+
+For example, you receive warning message:
+
+```text
+The “type” attribute for the “style” element is not needed and should be omitted.
+```
+
+Now you can suppress it
+
+```json
+{
+  "nodeW3Cvalidator": {
+    "suppressErrors": [],
+    "suppressWarnings": [
+      "The “type” attribute for the “style” element is not needed and should be omitted."
+    ]
+  }
+}
+```
+
+
 ### Usage Example
 
 ```js

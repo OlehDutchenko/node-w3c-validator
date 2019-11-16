@@ -1,6 +1,6 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
@@ -12,6 +12,14 @@
   },
   "bin": {
     "node-w3c-validator": "./bin/cmd.js"
+  },
+  "nodeW3Cvalidator": {
+    "suppressErrors": [
+      "Attribute “href” not allowed"
+    ],
+    "suppressWarnings": [
+      "Consider adding a “lang” attribute to the “html” start tag"
+    ]
   },
   "repository": {
     "type": "git",
