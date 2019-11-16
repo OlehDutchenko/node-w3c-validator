@@ -22,10 +22,10 @@ program
 		'-i, --input [path]',
 		'Validate input path'
 	)
-    .option(
-        '--exclude [path]',
-        'Exclude from input path'
-    )
+	.option(
+		'--exclude [path]',
+		'Exclude from input path'
+	)
 	.option(
 		'-a, --asciiquotes',
 		'Specifies whether ASCII quotation marks are substituted for Unicode smart quotation marks in messages.'
@@ -108,8 +108,8 @@ function detectUserOptions () {
 	let userOptions = {
 		output: false,
 		exec: {},
-        filterfile: program.filterfile,
-        filterpattern: program.filterpattern
+		filterfile: program.filterfile,
+		filterpattern: program.filterpattern
 	};
 
 	cliProps.forEach((prop) => {
