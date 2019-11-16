@@ -4,7 +4,7 @@
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
-    "test": "prettier --write \"lib/**/*.js\" && prettier --write \"bin/cmd.js\" && happiness --verbose --fix | snazzy",
+    "test": "prettier --write \"lib/**/*.js\" && prettier --write \"bin/cmd.js\" && happiness --verbose | snazzy",
     "cli-api": "node-w3c-validator -i ./tests/**/*.html -f html -o /results/cli-api-report.html",
     "nodejs-api": "node ./tests/demo.js",
     "code-style": "happiness --verbose --fix | snazzy"
