@@ -76,7 +76,7 @@ possible values: `gnu | xml | json | text | html | lint`
 > it uses a [eslint-formatter-pretty](https://github.com/sindresorhus/eslint-formatter-pretty#readme) under the hood
 
 
-![lint format screenshot](./tests/assets/lint-format-screenshot.png)
+![lint format screenshot](https://raw.githubusercontent.com/dutchenkoOleg/node-w3c-validator/master/tests/assets/lint-format-screenshot-upd.png)
 
 
 #### `--filterfile <filename>`
