@@ -291,7 +291,7 @@ nodeW3CValidator(validatePath, {
 
 ## Changelog
 
-Please read [CHANGELOG.md](https://github.com/dutchenkoOleg/node-w3c-validator/blob/master/CHANGELOG.md)
+See [Releases history](https://github.com/dutchenkoOleg/node-w3c-validator/releases)
 
 ## Contributing
 
