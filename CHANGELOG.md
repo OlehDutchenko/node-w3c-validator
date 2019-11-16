@@ -7,8 +7,10 @@
 
 ---
 
-## [1.4.0] - 2019.11.16
+## [1.5.0] - 2019.11.16
 
+- [[1d61ea2](https://github.com/dutchenkoOleg/node-w3c-validator/commit/1d61ea2271c52b65308f46ca754c3b77e337ac66)] - 1.5.0 - add "exclude" option
+- [[12c7656](https://github.com/dutchenkoOleg/node-w3c-validator/commit/12c76567266d11cd00c9d07f97a045695b16dc74)] - 1.4.1 - hotfix
 - [[697daed](https://github.com/dutchenkoOleg/node-w3c-validator/commit/697daed702d7685bf8ebc4a574ff2231c7f7a484)] - 1.4.0 - add lint format
 - [[4d0cef6](https://github.com/dutchenkoOleg/node-w3c-validator/commit/4d0cef6551b5c7384d65fc95d3f414f389866886)] - 1.3.5 - Add github action
 - [[0c9a65e](https://github.com/dutchenkoOleg/node-w3c-validator/commit/0c9a65ea37e366becfca19ceb1145b7e6e27bdd0)] - Merge pull request #11 
