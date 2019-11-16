@@ -18,7 +18,10 @@ const nodeW3CValidator = require('../lib/validator');
 program
 	.version(pkg.version)
 	.usage('[options] <pattern>')
-	.option('-i, --input [path]', 'Validate input path')
+	.option(
+		'-i, --input [path]',
+		'Validate input path'
+	)
 	.option(
 		'-a, --asciiquotes',
 		'Specifies whether ASCII quotation marks are substituted for Unicode smart quotation marks in messages.'
@@ -27,7 +30,9 @@ program
 		'-e, --errors-only',
 		'Specifies that only error-level messages and non-document-error messages are reported (so that warnings and info messages are not reported)'
 	)
-	.option('-q, --exit-zero-always', 'Makes the checker exit zero even if errors are reported for any documents')
+	.option(
+		'-q, --exit-zero-always',
+		'Makes the checker exit zero even if errors are reported for any documents')
 	.option(
 		'--filterfile [filename]',
 		'Specifies a filename. Each line of the file contains either a regular expression or starts with "#" to indicate the line is a comment. Any error message or warning message that matches a regular expression in the file is filtered out (dropped/suppressed)'
@@ -36,9 +41,18 @@ program
 		'--filterpattern [pattern]',
 		'Specifies a regular-expression pattern. Any error message or warning message that matches the pattern is filtered out (dropped/suppressed)'
 	)
-	.option('-f, --format [gnu|xml|json|text|html]', 'Specifies the output format for reporting the results')
-	.option('-s, --skip-non-html', 'Skip documents that don’t have *.html, *.htm, *.xhtml, or *.xht extensions.')
-	.option('-H, --html', 'Forces any *.xhtml or *.xht documents to be parsed using the HTML parser')
+	.option(
+		'-f, --format [gnu|xml|json|text|html|lint]',
+		'Specifies the output format for reporting the results'
+	)
+	.option(
+		'-s, --skip-non-html',
+		'Skip documents that don’t have *.html, *.htm, *.xhtml, or *.xht extensions.'
+	)
+	.option(
+		'-H, --html',
+		'Forces any *.xhtml or *.xht documents to be parsed using the HTML parser'
+	)
 	.option(
 		'--no-langdetect',
 		'Disables language detection, so that documents are not checked for missing or mislabeled html[lang] attributes.'
@@ -51,7 +65,10 @@ program
 		'-v, --verbose',
 		'Specifies "verbose" output (currently this just means that the names of files being checked are written to stdout)'
 	)
-	.option('-o, --output [path]', 'Write reporting result to the path')
+	.option(
+		'-o, --output [path]',
+		'Write reporting result to the path'
+	)
 	.option(
 		'-b, --buffersize <size>',
 		'1024 * <size> Increase maxBuffer size for child_process.exec, if result output truncated'

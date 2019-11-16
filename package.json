@@ -1,11 +1,12 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.3.6",
+  "version": "1.4.0",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
     "test": "happiness --verbose | snazzy",
-    "cli-api": "node-w3c-validator -i ./tests/**/*.html -f html -o /results/cli-api-report.html",
+    "cli-html": "node ./bin/cmd.js -i ./tests/**/*.html -f html -o ./results/cli-api-report.html",
+    "cli-lint": "node ./bin/cmd.js -i ./tests/**/*.html -f lint -e",
     "nodejs-api": "node ./tests/demo.js",
     "code-style": "happiness --verbose --fix | snazzy"
   },
@@ -35,6 +36,7 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
+    "eslint-formatter-pretty": "^3.0.0",
     "fileset": "^2.0.3",
     "lodash": ">=4.17.15",
     "mkdirp": "^0.5.1",
