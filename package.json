@@ -47,7 +47,7 @@
     "eslint-formatter-pretty": "^3.0.0",
     "fileset": "^2.0.3",
     "lodash": ">=4.17.15",
-    "mkdirp": "^0.5.1",
+    "mkdirp": "^1.0.3",
     "ora": "^3.4.0",
     "vnu-jar": "^19.6.7"
   },
