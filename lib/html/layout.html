@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Validation results - Nu Html Checker</title>
+	<style>button,hr,input{overflow:visible}audio,canvas,progress,video{display:inline-block}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0;min-width:980px}article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects;color:#00f}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}[hidden],template{display:none}.message__type,.tab,.view__path span{display:inline-block}html{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol",sans-serif}a:hover{color:red}.wrapper{margin:1.5rem 3%}.header{margin-bottom:1.5rem}.header__title{background-color:#365d95;color:#fdfdfd;font-size:1.6rem;padding:.43em;border-radius:6px;margin:0;font-weight:400}.header__title a{color:#ccc}.header__title a:hover{color:red}.disclaimer{color:#747474}.navs{margin-bottom:1.5rem;padding-bottom:.5rem;border:1px solid #ccc;border-left-width:0;border-right-width:0}.navs__title{font-size:1.25rem}.navs__list li{margin-bottom:.25rem}.view{overflow:hidden;padding-bottom:1.5rem;margin-bottom:1.5rem;border-bottom:1px solid #ccc}.view__title{font-size:1.5rem}.view__path span{font-size:80%;font-family:monospace,monospace;vertical-align:top;padding:5px;border-radius:4px;background-color:#eee}.messages{padding:1.5rem 2.5rem;background-color:#efefef;border-radius:4px}.message{border:1px solid #ccc;margin-bottom:8px;padding:0 1rem 1rem;border-radius:4px;background-color:#fff}.message__head{font-size:1.25rem;font-weight:600}.message__head code{border:1px dashed #999;font-family:monospace,monospace;padding-left:5px;padding-right:5px;font-weight:400;font-size:1rem;background-color:#fafafa;margin-left:2px;margin-right:2px}.message__type{vertical-align:middle;padding:1px 6px;border-radius:6px;border:1px solid #ccc;font:caption;font-weight:700;text-transform:capitalize}.message__type--error{background-color:#fcc}.message__type--warning{background-color:#ffc}.message__type--fatal{background-color:#fd6f6f}.message__type--info{background-color:#cce8ff}.message__extract{overflow:auto;padding:1rem;background:#fafafa;border:1px dashed #999}.invisible{opacity:.3}.tab{text-align:center;width:2.5rem;border-left:1px dotted rgba(0,0,0,.5)}table{border-collapse:collapse;border-color:#ccc}td,th{padding: .5rem}select{box-sizing:border-box;width:100%;height:2rem;padding.5rem 1rem;border-radius:4px;margin:4px 0 8px;}.is-hidden{visibility:hidden;height:0;overflow:hidden;margin:0;padding:0;border:0}</style>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<h1 class="header__title">Validation results - <a href="https://validator.w3.org/nu/" title="https://validator.w3.org/nu/" target="_blank">Nu Html Checker</a></h1>
+		</header>
+		<p class="disclaimer"><strong>Disclaimer.</strong> This tool is an ongoing experiment in better HTML checking, and its behavior remains subject to change</p>
+		<% if (Object.keys(views).length > 1) { %>
+			<nav id="navs" class="navs">
+				<h2 class="navs__title">Table of contents</h2>
+				<ul class="navs__list">
+				<% for (var key in views) { %>
+					<% var data = views[key]; %>
+					<li><a href="#<%- data.anchor %>" title="Go to the &quot;<%- data.name %>&quot; block"><%- data.name %></a></li>
+				<% } %>
+				</ul>
+				<h2 class="navs__title">Totals</h2>
+				<table width="100%" border="1">
+					<tr align="center">
+						<th width="36%">total groups</th>
+						<th width="64%">total messages</th>
+					</tr>
+					<tr valign="top">
+						<td>
+							<ul class="navs__list">
+								<% for (var key in counts.groups) { %>
+								<li><%- key %> - (<%- counts.groups[key] %>)</li>
+								<% } %>
+							</ul>
+						</td>
+						<td>
+							<ul class="navs__list">
+								<% for (var key in counts.msgGroups) { %>
+								<% var msgGroup = counts.msgGroups[key]; %>
+								<li>
+									<%= key.replace(/^(.+:)/, (str, grp) => `<strong>${grp}</strong>`) %> - (<%- msgGroup.count %>)
+									<% if (Object.keys(msgGroup.urls).length) { %>
+									<ul>
+										<% for (var url in msgGroup.urls) { %>
+											<%
+												let viewName = url.replace(/\\/, '/').split('/').pop();
+												let viewAnchor = viewName.replace(/\/|\.|[а-я]|\s/gi, '-');
+											%>
+											<li><small><a href="#<%- viewAnchor %>"><%- url %></a></small></li>
+										<% } %>
+									</ul>
+									<br>
+									<% } %>
+								</li>
+								<% } %>
+							</ul>
+						</td>
+					</tr>
+				</table>
+				<br>
+				<br>
+			</nav>
+		<% } %>
+		<main class="results">
+			<% for (var key in views) { %>
+				<% var data = views[key]; %>
+				<div id="<%- data.anchor %>" class="view js-view">
+					<h3 class="view__title">
+						<% if (Object.keys(views).length > 1) { %>
+							<a href="#navs" title="Back to top">&uArr;</a>
+							<a href="#<%- data.anchor %>" title="Set anchor for block">#</a>
+						<% } %>
+						<span><%- data.name %></span>
+					</h3>
+					<p class="view__path">
+						<span><%- data.path %></span>
+					</p>
+					<table width="100%" border="1">
+						<tr align="center">
+							<th width="36%">groups</th>
+							<th width="64%">messages</th>
+						</tr>
+						<tr valign="top">
+							<td>
+								<ul>
+									<% for (var k in data.errorCounts) { %>
+									<li style="margin-bottom: 3px;"><%- k %> - (<%- data.errorCounts[k] %>)</li>
+									<% } %>
+								</ul>
+								<small>filter:</small>
+								<select id="<%- data.anchor + '-select-type' %>" class="js-filter" data-reset="<%- data.anchor + '-select-group' %>">
+									<option value="group">all groups</option>
+									<% for (var k in data.errorCounts) { %>
+									<option value="group--<%- k %>"><%- k %></option>
+									<% } %>
+								</select>
+							</td>
+							<td>
+								<ul>
+									<% for (var k in data.errorGroups) { %>
+									<li style="margin-bottom: 3px;"><%= k.replace(/^(.+:)/, (str, grp) => `<strong>${grp}</strong>`) %> - (<%- data.errorGroups[k].count %>)</li>
+									<% } %>
+								</ul>
+								<small>filter:</small>
+								<select id="<%- data.anchor + '-select-group' %>" class="js-filter" data-reset="<%- data.anchor + '-select-type' %>">
+									<option value="message">all messages</option>
+									<% for (var k in data.errorGroups) { %>
+									<option value="message--<%- data.errorGroups[k].key %>"><%- k %></option>
+									<% } %>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<div class="view__list">
+						<ol class="messages">
+							<% data.list.forEach(function(item, i) { %>
+								<% var liAnchor = data.anchor + '-' + (i + 1);  %>
+								<li id="<%- liAnchor %>" class="group message group--<%- item.processType %> message--<%- item.processGroup %> js-filter-item">
+									<p class="message__head">
+										<a href="#<%- data.anchor %>" title="Back to block">&uarr;</a>
+										<a href="#<%- liAnchor %>" title="Set anchor for message">#</a>
+										<strong class="message__type message__type--<%- item.badge %>"><%- item.badge %></strong>
+										<span class="message__description"><%= item.message %></span>
+									</p>
+									<p class="message__location">
+										From line <span class="first-line"><%- item.firstLine %></span>, column <span class="first-col"><%- item.firstColumn %></span>; to line <span class="last-line"><%- item.lastLine %></span>, column <span class="last-col"><%- item.lastColumn %></span>
+									</p>
+									<pre class="message__extract"><%= item.extract %></pre>
+								</li>
+							<% }); %>
+						</ol>
+					</div>
+				</div>
+			<% } %>
+		</main>
+		<footer>
+			<p>
+				<small>Date of the audit - <em><%- new Date() %></em></small>
+				<br>
+				<small>Validation tool - <em><a href="https://github.com/dutchenkoOleg/node-w3c-validator" target="_blank">node-w3c-validator</a></em></small>
+			</p>
+		</footer>
+	</div>
+
+	<script>
+		(function (window, document) {
+			function setViewHandlers ($view) {
+				var $items = $view.getElementsByClassName('js-filter-item');
+
+				$view.onchange = function(event) {
+					var $el = event.target;
+
+					if ($el.dataset.reset) {
+						changeFilter($el, $items);
+					}
+				}
+			}
+
+			function changeFilter ($filter, $items) {
+				var $reset = document.getElementById($filter.dataset.reset);
+				var filterClass = $filter.value;
+				var length = $items.length;
+
+				for (var i = 0; i < length; i++) {
+					var $item = $items[i];
+					var filtered = $item.classList.contains(filterClass);
+
+					if (filtered) {
+						$item.classList.remove('is-hidden');
+					} else {
+						$item.classList.add('is-hidden');
+					}
+				}
+
+				$reset.outerHTML = $reset.outerHTML;
+			}
+
+			window.onload = function () {
+				var $views = document.getElementsByClassName('js-view');
+				var length = $views.length;
+
+				for (var i = 0; i < length; i++) {
+					setViewHandlers($views[i]);
+				}
+			};
+		})(window, document);
+	</script>
+</body>
+</html>
