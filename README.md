@@ -13,8 +13,8 @@
 
 ## Attention
 
-> You need install Java for working with `node-w3c-validator`
-> Visit https://java.com for download Java if you not have it
+> You need to install the "Java" for working with `node-w3c-validator`  
+> Visit https://java.com for downloading the "Java" if you not have it
 
 
 ---
@@ -154,7 +154,7 @@ Write reporting result to the path
 
 #### `-b, --buffersize <size>`
 
-Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html#child_process_child_process_exec_command_options_callback) size to prevent #3, `!!! OUTPUT ERROR` or `Unexpected end of JSON input` errors. This is because [child_process stdout being truncated](https://github.com/nodejs/node/issues/19218) when validator check a lot of files.
+Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html#child_process_child_process_exec_command_options_callback) size to prevent [`!!! OUTPUT ERROR` or `Unexpected end of JSON input` errors](https://github.com/dutchenkoOleg/node-w3c-validator/issues/3). This is because [child_process stdout being truncated](https://github.com/nodejs/node/issues/19218) when validator check a lot of files.
 
 ##### CLI `-b, --buffersize`
 
@@ -230,7 +230,7 @@ _Parameters:_
 
 Name | Data type | Description
  --- | --- | ---
- `err` | `Error / Object.<null>` | if no errors - will be `null`, else - Error object
+ `err` | `Error / null` | if no errors - will be `null`, otherwise - Error object
  `output` | `string` | string with reporting result, if no errors - can be as empty string
 
 ### nodeW3CValidator.writeFile(filePath, outputData[, done])
@@ -241,7 +241,7 @@ _Parameters:_
 
 Name | Data type | Argument | Description
  --- | --- | --- | ---
- `filePath` | `string` |  | if no errors - will be `null`, else - Error object
+ `filePath` | `string` |  | relative path to saving a file
  `outputData` | `string / Buffer` |  | file output content
  `done` | `Function` | _optional_ | if exist - it will asynchronous writes output to the filePath. See [fs.writeFile(file, data, callback)](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)
 
@@ -299,6 +299,19 @@ Now you can suppress it
     "suppressErrors": [],
     "suppressWarnings": [
       "The “type” attribute for the “style” element is not needed and should be omitted."
+    ]
+  }
+}
+```
+
+Or like this with a part of message:
+
+```json
+{
+  "nodeW3Cvalidator": {
+    "suppressErrors": [],
+    "suppressWarnings": [
+      "is not needed and should be omitted"
     ]
   }
 }
