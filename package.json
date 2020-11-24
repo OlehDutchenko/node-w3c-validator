@@ -46,18 +46,18 @@
     "checker"
   ],
   "dependencies": {
-    "chalk": "^2.4.2",
-    "commander": "^2.20.0",
-    "eslint-formatter-pretty": "^3.0.0",
+    "chalk": "^4.1.0",
+    "commander": "^6.2.0",
+    "eslint-formatter-pretty": "^4.0.0",
     "fileset": "^2.0.3",
-    "lodash": ">=4.17.15",
-    "mkdirp": "^1.0.3",
-    "ora": "^3.4.0",
-    "vnu-jar": "^19.6.7"
+    "lodash": ">=4.17.20",
+    "mkdirp": "^1.0.4",
+    "ora": "^5.1.0",
+    "vnu-jar": "^20.6.30"
   },
   "devDependencies": {
     "happiness": "^10.0.2",
-    "eslint": ">=6.1.0",
-    "snazzy": "^8.0.0"
+    "eslint": ">=7.14.0",
+    "snazzy": "^9.0.0"
   }
 }
