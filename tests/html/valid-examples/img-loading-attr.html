@@ -1,11 +1,8 @@
-
 <!doctype html>
-<html>
+<html lang="en">
 <head>
     <title>Example Domain</title>
-
     <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
     body {
@@ -26,6 +23,12 @@
         color: #38488f;
         text-decoration: none;
     }
+    .demo {
+        text-align: center;
+    }
+    .demo + .demo {
+        margin-top: 300vh;
+    }
     @media (max-width: 700px) {
         body {
             background-color: #fff;
@@ -42,16 +45,9 @@
 
 <body>
 <div>
-    <h1>Example Domain</h1>
-    <p>This domain is established to be used for illustrative examples in documents. You may use this
-    domain in examples without prior coordination or asking for permission.</p>
-    <p><a href="http://www.iana.org/domains/example">More information...</a></p>
-    <p><img src="noimage.jpg" loading="lazy" alt=""></p>
-    <p><img src="noimage.jpg" loadin="lazy" alt=""></p>
-    <ul>
-        <div><span>Item 1</span></div>
-      <li><p>Item 2</p></li>
-    </ul>
+    <h1><code>&lt;img></code> loading attribute example</h1>
+    <p class="demo"><img src="https://via.placeholder.com/150" loading="lazy" alt=""></p>
+    <p class="demo"><img src="https://via.placeholder.com/200" loading="lazy" alt=""></p>
 </div>
 </body>
 </html>

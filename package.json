@@ -1,12 +1,12 @@
 {
   "name": "node-w3c-validator",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
     "test": "happiness --verbose | snazzy",
-    "cli-html": "node ./bin/cmd.js -i ./tests/**/*.html -f html -o ./results/cli-api-report.html",
-    "cli-lint": "node ./bin/cmd.js -i ./tests/**/*.html -f lint",
+    "cli-html": "node ./bin/cmd.js -i ./tests/html/valid-examples/*.html -f html -o ./results/cli-api-report.html",
+    "cli-lint": "node ./bin/cmd.js -i ./tests/html/valid-examples/*.html -f lint",
     "nodejs-api": "node ./tests/demo.js",
     "code-style": "happiness --verbose --fix | snazzy"
   },
@@ -17,14 +17,6 @@
     "bin",
     "lib"
   ],
-  "nodeW3Cvalidator": {
-    "suppressErrors": [
-      "Attribute “href” not allowed"
-    ],
-    "suppressWarnings": [
-      "Consider adding a “lang” attribute to the “html” start tag"
-    ]
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dutchenkoOleg/node-w3c-validator.git"
