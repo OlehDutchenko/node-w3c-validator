@@ -332,6 +332,7 @@ Please read [CONTRIBUTING.md](https://github.com/dutchenkoOleg/node-w3c-validato
 - Michael Kühnel [@mischah](https://github.com/mischah)
 - Debjeet Biswas [@detj](https://github.com/detj)
 - Yunus Gaziev [@yunusga](https://github.com/yunusga)
+- WezomDev [@WezomDev](https://github.com/WezomDev)
 
 ## Code of Conduct
 

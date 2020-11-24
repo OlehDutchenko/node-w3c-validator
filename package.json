@@ -1,6 +1,6 @@
 {
   "name": "node-w3c-validator",
-  "version": "1.6.5",
+  "version": "2.0.0",
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "code-style": "happiness --verbose --fix | snazzy"
   },
   "bin": {
-    "node-w3c-validator": "./bin/cmd.js"
+    "node-w3c-validator": "bin/cmd.js"
   },
   "files": [
     "bin",
@@ -30,6 +30,12 @@
     "url": "git+https://github.com/dutchenkoOleg/node-w3c-validator.git"
   },
   "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "contributors": [
+    "Michael Kühnel (https://github.com/mischah)",
+    "Debjeet Biswas (https://github.com/detj)",
+    "Yunus Gaziev (https://github.com/yunusga)",
+    "WezomDev (https://github.com/WezomDev)"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dutchenkoOleg/node-w3c-validator/issues"
@@ -56,8 +62,8 @@
     "vnu-jar": "^20.6.30"
   },
   "devDependencies": {
-    "happiness": "^10.0.2",
     "eslint": ">=7.14.0",
+    "happiness": "^10.0.2",
     "snazzy": "^9.0.0"
   }
 }
