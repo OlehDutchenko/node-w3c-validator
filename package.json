@@ -51,7 +51,7 @@
     "lodash": ">=4.17.20",
     "mkdirp": "^1.0.4",
     "ora": "^5.1.0",
-    "vnu-jar": "^20.6.30"
+    "vnu-jar": "^21.10.12"
   },
   "devDependencies": {
     "eslint": ">=7.14.0",
