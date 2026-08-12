@@ -42,10 +42,10 @@ test('writeFile (sync) creates the file with the given contents', () => {
 	}
 });
 
-// Bug B: writeFile's async branch calls `mkdirp(dir, cb)`, but mkdirp@1 removed
-// the callback API, so it throws "invalid options argument" synchronously.
-// Kept as TODO until Phase 3 replaces mkdirp with fs.mkdir({ recursive: true }).
-test('writeFile (async) creates the file and invokes the callback', { todo: 'Bug B: mkdirp@1 has no callback API' }, (t, done) => {
+// Regression coverage for Bug B: writeFile's async branch used mkdirp(dir, cb),
+// but mkdirp@1 dropped the callback API and threw synchronously. Phase 3
+// replaced it with fs.mkdir(dir, { recursive: true }).
+test('writeFile (async) creates the file and invokes the callback', (t, done) => {
 	const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'nw3c-'));
 	const filePath = path.join(dir, 'nested', 'out.txt');
 	nodeW3CValidator.writeFile(filePath, 'hello', (err) => {
