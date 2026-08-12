@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "npm run lint",
+    "test": "node --test tests/*.test.js",
     "cli-html": "node ./bin/cmd.js -i ./tests/html/valid-examples/*.html -f html -o ./results/cli-api-report.html",
     "cli-lint": "node ./bin/cmd.js -i ./tests/html/valid-examples/*.html -f lint",
     "nodejs-api": "node ./tests/demo.js"
