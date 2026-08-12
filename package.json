@@ -4,11 +4,15 @@
   "description": "Wrapper for The Nu Html Checker (v.Nu)",
   "main": "./lib/validator.js",
   "scripts": {
-    "test": "happiness --verbose | snazzy",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "npm run lint",
     "cli-html": "node ./bin/cmd.js -i ./tests/html/valid-examples/*.html -f html -o ./results/cli-api-report.html",
     "cli-lint": "node ./bin/cmd.js -i ./tests/html/valid-examples/*.html -f lint",
-    "nodejs-api": "node ./tests/demo.js",
-    "code-style": "happiness --verbose --fix | snazzy"
+    "nodejs-api": "node ./tests/demo.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "bin": {
     "node-w3c-validator": "bin/cmd.js"
@@ -51,11 +55,11 @@
     "lodash": ">=4.17.20",
     "mkdirp": "^1.0.4",
     "ora": "^5.1.0",
-    "vnu-jar": "^21.10.12"
+    "vnu-jar": "^26.8.6"
   },
   "devDependencies": {
-    "eslint": ">=7.14.0",
-    "happiness": "^10.0.2",
-    "snazzy": "^9.0.0"
+    "@eslint/js": "^9.15.0",
+    "@stylistic/eslint-plugin": "^2.11.0",
+    "eslint": "^9.15.0"
   }
 }
