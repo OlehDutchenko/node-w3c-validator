@@ -3,35 +3,35 @@ name: CI
 on: [push, pull_request]
 
 jobs:
-  lint:
+  test:
     name: Lint and Test
 
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [10.x]
-        java: [8.x]
+        node-version: [18.x, 20.x, 22.x]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: npm
 
-      - name: Setup Java ${{ matrix.java }}
-        uses: actions/setup-java@v1
+      - name: Setup Java
+        uses: actions/setup-java@v4
         with:
-          java-version: ${{ matrix.java }}
-          architecture: x64
+          distribution: temurin
+          java-version: 17
 
       - name: Install dependencies
         run: npm ci
 
       - name: Lint
-        run: npm run test
+        run: npm run lint
 
       - name: Test CLI HTML
         run: npm run cli-html
