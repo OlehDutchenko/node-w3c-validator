@@ -33,11 +33,5 @@ jobs:
       - name: Lint
         run: npm run lint
 
-      - name: Test CLI HTML
-        run: npm run cli-html
-
-      - name: Test CLI Lint
-        run: npm run cli-lint
-
-      - name: Test NodeJS Api
-        run: npm run nodejs-api
+      - name: Test
+        run: npm test
