@@ -19,22 +19,23 @@ are welcome:
 
 ## Javascript Code Style
 
-[![happiness][happiness-image]][happiness-url]
+[![code style: eslint][eslint-image]][eslint-url]
 
-This repository uses [`happiness`][happiness-url] to maintain code style and consistency,
+This repository uses [ESLint][eslint-url] to maintain code style and consistency,
 and to avoid style arguments.  
  ***So you also need to follow this code style!*** 
  
- Run `npm test` for check outs.
+ Run `npm run lint` to check the code style (`npm run lint:fix` to autofix),
+ and `npm test` to run the test suite.
 
-[happiness-image]: https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg
-[happiness-url]: https://github.com/JedWatson/happiness
+[eslint-image]: https://img.shields.io/badge/code_style-eslint-4B32C3.svg
+[eslint-url]: https://eslint.org
 
 ## Project Governance
 
 Individuals making significant and valuable contributions are given commit-access to the
 project to contribute as they see fit. This project is more like an open wiki than a
-happiness guarded open source project.
+jealously guarded open source project.
 
 ### Rules
 

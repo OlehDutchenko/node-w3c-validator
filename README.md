@@ -1,13 +1,13 @@
 # node-w3c-validator
 
-![node](https://img.shields.io/badge/node-6.3.1-yellow.svg)
+![node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)
 [![npm](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/node-w3c-validator)
 [![license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/dutchenkoOleg/node-w3c-validator/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/dutchenkoOleg/node-w3c-validator.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/node-w3c-validator)
+[![CI](https://github.com/dutchenkoOleg/node-w3c-validator/actions/workflows/lint.yml/badge.svg)](https://github.com/dutchenkoOleg/node-w3c-validator/actions/workflows/lint.yml)
 
 > _Wrapper for [The Nu Html Checker (v.Nu)](https://www.npmjs.com/package/vnu-jar)_
 
-[![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
+[![code style: eslint](https://img.shields.io/badge/code_style-eslint-4B32C3.svg)](https://eslint.org)
 
 ---
 
@@ -154,7 +154,7 @@ Write reporting result to the path
 
 #### `-b, --buffersize <size>`
 
-Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html#child_process_child_process_exec_command_options_callback) size to prevent [`!!! OUTPUT ERROR` or `Unexpected end of JSON input` errors](https://github.com/dutchenkoOleg/node-w3c-validator/issues/3). This is because [child_process stdout being truncated](https://github.com/nodejs/node/issues/19218) when validator check a lot of files.
+Increase [maxBuffer](https://nodejs.org/api/child_process.html#child_processexecfilefile-args-options-callback) size to prevent [`!!! OUTPUT ERROR` or `Unexpected end of JSON input` errors](https://github.com/dutchenkoOleg/node-w3c-validator/issues/3). This is because [child_process stdout being truncated](https://github.com/nodejs/node/issues/19218) when validator check a lot of files.
 
 ##### CLI `-b, --buffersize`
 
@@ -163,14 +163,14 @@ Increase [maxBuffer](https://nodejs.org/docs/latest-v10.x/api/child_process.html
 node-w3c-validator -i static/**/*.html -b 500
 ```
 
-##### Node.js API `exec.buffersize`
+##### Node.js API `exec.maxBuffer`
 
 ```js
 // increase buffer size (1024 * 500)
 nodeW3CValidator(validatePath, {
     format: 'html',
     exec: {
-        buffersize: 1024 * 500
+        maxBuffer: 1024 * 500
     }
 }, function (err, output) {
     // ...
@@ -217,7 +217,7 @@ transforms to
 
 ```js
 exec: {
-    buffersize: 1024 * 500
+    maxBuffer: 1024 * 500
 }
 ```
 
