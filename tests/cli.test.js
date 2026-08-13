@@ -52,6 +52,24 @@ test('writes a valid JSON report to the -o output path', { skip }, async () => {
 	}
 });
 
+test('html format writes a full HTML report to -o', { skip }, async () => {
+	const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'nw3c-'));
+	const outPath = path.join(dir, 'report.html');
+	try {
+		const { code } = await runCli([
+			'-i', fixture('fail.html'),
+			'-f', 'html',
+			'-o', outPath
+		]);
+		assert.strictEqual(code, 1);
+		const html = fs.readFileSync(outPath, 'utf8');
+		assert.match(html, /<!doctype html>/i);
+		assert.match(html, /node-w3c-validator/);
+	} finally {
+		fs.rmSync(dir, { recursive: true, force: true });
+	}
+});
+
 test('suppressErrors from package.json drops matching errors', { skip }, async () => {
 	const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'nw3c-'));
 	const pkg = {
@@ -74,19 +92,18 @@ test('suppressErrors from package.json drops matching errors', { skip }, async (
 });
 
 // -----------------------------------------------------------------------------
-// Known pre-existing bugs — kept as TODO so they stay visible without failing
-// CI. Scheduled to be fixed in Phase 3, after which the `todo` flag is removed.
+// Non-JSON output formats — regression coverage for Bug A (Java-availability
+// check used to JSON.parse(stderr) and misfire for gnu/text/xml and the
+// default no-format run). Fixed in Phase 3 via execFile ENOENT detection.
 // -----------------------------------------------------------------------------
 
-// Bug A: the Java-availability check does `JSON.parse(stderr)`, which throws for
-// any non-JSON output (gnu/text/xml, and the default no-format run), so the CLI
-// wrongly reports "you haven't installed Java" and exits 1.
-test('valid document exits 0 with the default format', { skip, todo: 'Bug A: Java-detection misfires on non-JSON output' }, async () => {
+test('valid document exits 0 with the default format', { skip }, async () => {
 	const { code } = await runCli(['-i', fixture('pass.html')]);
 	assert.strictEqual(code, 0);
 });
 
-test('gnu format output references the validated file', { skip, todo: 'Bug A: Java-detection misfires on non-JSON output' }, async () => {
-	const { stdout } = await runCli(['-i', fixture('fail.html'), '-f', 'gnu']);
+test('gnu format output references the validated file', { skip }, async () => {
+	const { code, stdout } = await runCli(['-i', fixture('fail.html'), '-f', 'gnu']);
+	assert.strictEqual(code, 1);
 	assert.match(stdout, /fail\.html/);
 });

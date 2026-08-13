@@ -6,7 +6,7 @@
 
 const path = require('path');
 const chalk = require('chalk');
-const program = require('commander');
+const { program } = require('commander');
 const pkg = require('../package.json');
 const nodeW3CValidator = require('../lib/validator');
 
@@ -80,6 +80,13 @@ program
 	.parse(process.argv);
 
 /**
+ * Parsed CLI options (commander 7+ exposes them via `program.opts()`)
+ * @const {Object}
+ * @private
+ */
+const cliOptions = program.opts();
+
+/**
  * Properties list for auto detecting
  * @const {Array.<string>}
  * @private
@@ -104,16 +111,16 @@ const cliProps = [
  * @sourceCode
  */
 function detectUserOptions () {
-	let outputPath = program.output;
+	let outputPath = cliOptions.output;
 	let userOptions = {
 		output: false,
 		exec: {},
-		filterfile: program.filterfile,
-		filterpattern: program.filterpattern
+		filterfile: cliOptions.filterfile,
+		filterpattern: cliOptions.filterpattern
 	};
 
 	cliProps.forEach((prop) => {
-		let value = program[prop];
+		let value = cliOptions[prop];
 
 		if ((prop === 'stream' || prop === 'langdetect') && value) {
 			return;
@@ -137,7 +144,7 @@ function detectUserOptions () {
  * @returns {*}
  */
 function detectUserInput () {
-	let validatePath = program.input;
+	let validatePath = cliOptions.input;
 
 	if (typeof validatePath !== 'string') {
 		validatePath = process.cwd();
@@ -153,8 +160,8 @@ function detectUserInput () {
 
 const userOptions = detectUserOptions();
 const validatePath = detectUserInput();
-if (program.exclude) {
-	userOptions.exclude = program.exclude;
+if (cliOptions.exclude) {
+	userOptions.exclude = cliOptions.exclude;
 }
 
 // ----------------------------------------
